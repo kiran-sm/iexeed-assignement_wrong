@@ -1,0 +1,413 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+/* 
+font-family: 'Orbitron', sans-serif; */
+
+:root {
+  --main-color: #13866d;
+  --selective-color: #f98231;
+  --background-color: #fcfcfc;
+  --text-color: #333333;
+  --banner-color: #042e40;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden !important;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.banner {
+  background-color: var(--banner-color);
+  height: 5rem;
+  display: flex;
+
+  align-items: center;
+}
+
+.banner-text {
+  color: white;
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+sup {
+  font-size: 0.5rem;
+  top: -1rem;
+}
+
+.banneer-close {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+}
+
+/* ****************** */
+
+.nav-tabs {
+  float: left;
+}
+
+.nav {
+  flex-direction: column;
+}
+
+.vl1 {
+  border-left: 3px solid var(--main-color);
+  height: 1.5rem;
+  margin: 5% auto;
+}
+
+/* Style the buttons that are used to open the tab content */
+.nav-item,
+.nav-item4 {
+  border-radius: 50%;
+
+  display: block;
+  background-color: var(--main-color);
+  color: black;
+
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-item4 {
+  background-color: rgba(104, 102, 102, 0.486);
+}
+
+.vl {
+  border-left: 3px solid rgba(104, 102, 102, 0.486);
+  height: 1.5rem;
+  margin: 5% auto;
+}
+
+.steps {
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  border-radius: 50%;
+  border: none;
+  background-color: var(--selective-color);
+  color: white;
+}
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 70%;
+  border-left: none;
+  height: 300px;
+}
+
+.help-text {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--main-color);
+}
+
+.icon-01 {
+  height: 5rem;
+  /* border: 1px solid rgba(0, 0, 0, 0.205); */
+  padding: 5%;
+  border-radius: 50%;
+  background-color: white;
+}
+.person-icon {
+  text-align: center;
+}
+.card-title {
+  text-align: center;
+  color: white;
+}
+.card-head {
+  background-color: var(--main-color);
+}
+
+.card {
+  border: none;
+}
+
+.permanent-address {
+  font-weight: bold;
+  color: var(--main-color);
+}
+
+.card-text {
+  font-size: 1.2rem;
+}
+
+.card-body,
+form {
+  padding: 0;
+  box-shadow: 0px 0px 4px 1px #0000007d;
+}
+
+.round {
+  position: relative;
+}
+
+.round label {
+  background-color: #fff;
+  border: 1px solid rgba(7, 0, 0, 0.267);
+  border-radius: 50%;
+  cursor: pointer;
+  height: 28px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 28px;
+}
+
+.round label:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  left: 7px;
+  opacity: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 12px;
+}
+
+.round input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.round input[type="checkbox"]:checked + label {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+.round input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+
+.c-address {
+  font-size: 0.9rem;
+  margin-left: 5%;
+}
+
+.salutation {
+  width: 45%;
+}
+
+.mname {
+  width: 80%;
+  display: inline;
+}
+
+.fa-info-circle {
+  font-size: 1.5rem;
+  color: var(--main-color);
+}
+
+.form-control {
+  /* padding: 0; */
+  border-radius: 1.25rem;
+}
+
+.nav-tabs .nav-link {
+  border: none;
+  color: white;
+}
+
+select.round {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* background-image: url("../img/angle-down-solid.svg");
+  background-size: 75% 50%; */
+
+  background-image: linear-gradient(
+      45deg,
+      transparent 50%,
+      var(--main-color) 50%
+    ),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    radial-gradient(#ddd 70%, transparent 72%);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), calc(100% - 0.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1.5em 1.5em;
+  background-repeat: no-repeat;
+}
+
+select.round:focus {
+  background-image: linear-gradient(
+      45deg,
+      var(--main-color) 50%,
+      transparent 50%
+    ),
+    linear-gradient(135deg, transparent 50%, var(--main-color) 50%),
+    radial-gradient(gray 70%, transparent 72%);
+  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
+    calc(100% - 0.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1.5em 1.5em;
+  background-repeat: no-repeat;
+  border-color: black;
+  outline: 0;
+}
+
+.onoffswitch {
+  position: relative;
+  width: 111px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  /* border: 2px solid #999999; */
+  border-radius: 50px;
+}
+.onoffswitch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before,
+.onoffswitch-inner:after {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 30px;
+  padding: 0;
+  line-height: 30px;
+  font-size: 14px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+  content: "No";
+  padding-left: 18px;
+  background-color: #f98231;
+  color: #ffffff;
+}
+.onoffswitch-inner:after {
+  content: "Yes";
+  padding-right: 18px;
+  background-color: #eeeeee;
+  color: #999999;
+  text-align: right;
+}
+.onoffswitch-switch {
+  display: block;
+  width: 30px;
+  margin: 0px;
+  background: #ffffff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 77px;
+  border: 2px solid #999999;
+  border-radius: 50px;
+  transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px;
+}
+
+.cancel {
+  background-color: rgba(128, 128, 128, 0.288);
+  width: 100%;
+  border-radius: 1.25rem;
+}
+
+.continue {
+  background-color: var(--selective-color);
+  color: white;
+  width: 100%;
+  border-radius: 1.25rem;
+}
+
+button:hover {
+  filter: brightness(80%);
+}
+
+@media (min-width: 576px) {
+  .largeHide {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .hide {
+    display: none;
+  }
+  .vl,
+  .vl1 {
+    transform: rotate(90deg);
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .nav {
+    flex-direction: row;
+  }
+  .nav-tabs {
+    float: inherit;
+  }
+  .help-text {
+    font-size: 1.7rem;
+    margin-top: 25px;
+  }
+
+  .card {
+    margin-bottom: 25px;
+  }
+
+  .card-head {
+    display: flex;
+  }
+
+  .icon-01 {
+    height: 4rem;
+    margin: 0 20px;
+  }
+
+  .nav-item,
+  .nav-item4 {
+    height: 40px;
+  }
+}
