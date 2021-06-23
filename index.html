@@ -1,410 +1,395 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Snippet - BBBootstrap</title>
-    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
-    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' >
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-    <style>
-        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
 
-        .card0 {
-            background-color: #F5F5F5;
-            border-radius: 8px;
-            z-index: 0
-        }
+    <script defer src="./src/js/app.js"></script>
 
-        .card00 {
-            z-index: 0
-        }
+    <link rel="stylesheet" href="./src/css/style.css">
 
-        .card1 {
-            margin-left: 140px;
-            z-index: 0;
-            border-right: 1px solid #F5F5F5
-        }
-
-        .card2 {
-            display: none
-        }
-
-        .card2.show {
-            display: block
-        }
-
-       
-
-        input,
-        select {
-            padding: 2px;
-            border-radius: 0px;
-            box-sizing: border-box;
-            color: #9E9E9E;
-            border: 1px solid #BDBDBD;
-            font-size: 16px;
-            letter-spacing: 1px;
-            height: 50px !important
-        }
-
-        select {
-            width: 100%;
-            margin-bottom: 85px
-        }
-
-        input:focus,
-        select:focus {
-            -moz-box-shadow: none !important;
-            -webkit-box-shadow: none !important;
-            box-shadow: none !important;
-            border: 1px solid #E53935 !important;
-            outline-width: 0 !important
-        }
-
-        .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-            background-color: #E53935
-        }
-
-        .form-group {
-            position: relative;
-            margin-bottom: 1.5rem;
-            width: 77%
-        }
-
-        .form-control-placeholder {
-            position: absolute;
-            top: 0px;
-            padding: 12px 2px 0 2px;
-            transition: all 300ms;
-            opacity: 0.5
-        }
-
-        .form-control:focus+.form-control-placeholder,
-        .form-control:valid+.form-control-placeholder {
-            font-size: 95%;
-            top: 10px;
-            transform: translate3d(0, -100%, 0);
-            opacity: 1;
-            background-color: #fff
-        }
-
-        .next-button {
-            width: 18%;
-            height: 50px;
-            background-color: #BDBDBD;
-            color: #fff;
-            border-radius: 6px;
-            padding: 10px;
-            cursor: pointer
-        }
-
-        .next-button:hover {
-            background-color: #E53935;
-            color: #fff
-        }
-
-        .get-bonus {
-            margin-left: 154px
-        }
-
-        
-
-        #progressbar {
-            position: absolute;
-            left: 35px;
-            overflow: hidden;
-            color: #E53935
-        }
-
-        #progressbar li {
-            list-style-type: none;
-            font-size: 8px;
-            font-weight: 400;
-            margin-bottom: 36px
-        }
-
-        #progressbar li:nth-child(3) {
-            margin-bottom: 88px
-        }
-
-        #progressbar .step0:before {
-            content: "";
-            color: #fff
-        }
-
-        #progressbar li:before {
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
-            display: block;
-            font-size: 20px;
-            background: #fff;
-            border: 2px solid #E53935;
-            border-radius: 50%;
-            margin: auto
-        }
-
-        #progressbar li:last-child:before {
-            width: 40px;
-            height: 40px
-        }
-
-        #progressbar li:after {
-            content: '';
-            width: 3px;
-            height: 66px;
-            background: #BDBDBD;
-            position: absolute;
-            left: 58px;
-            top: 15px;
-            z-index: -1
-        }
-
-        #progressbar li:last-child:after {
-            top: 147px;
-            height: 132px
-        }
-
-        #progressbar li:nth-child(3):after {
-            top: 81px
-        }
-
-        #progressbar li:nth-child(2):after {
-            top: 0px
-        }
-
-        #progressbar li:first-child:after {
-            position: absolute;
-            top: -81px
-        }
-
-        #progressbar li.active:after {
-            background: #E53935
-        }
-
-        #progressbar li.active:before {
-            background: #E53935;
-            font-family: FontAwesome;
-            content: "\f00c"
-        }
-
-       
-
-        .prev {
-            display: block;
-            position: absolute;
-            left: 40px;
-            top: 20px;
-            cursor: pointer
-        }
-
-        .prev:hover {
-            color: #D50000 !important
-        }
-
-        @media screen and (max-width: 912px) {
-            .card00 {
-                padding-top: 30px
-            }
-
-            .card1 {
-                border: none;
-                margin-left: 50px
-            }
-
-            .card2 {
-                border-bottom: 1px solid #F5F5F5;
-                margin-bottom: 25px
-            }
-
-            .social {
-                height: 30px;
-                width: 30px;
-                font-size: 15px;
-                padding-top: 8px;
-                margin-top: 7px
-            }
-
-            .get-bonus {
-                margin-top: 40px !important;
-                margin-left: 75px
-            }
-
-            #progressbar {
-                left: -25px
-            }
-        }
-    </style>
+    <title>Hello, world!</title>
 </head>
 
 <body>
-    <div class="container-fluid px-1 px-md-4 py-5 mx-auto">
-        <div class="row d-flex justify-content-center">
-            <div class="col-12 col-md-11 col-lg-10 col-xl-9">
-                <div class="card card0 border-0">
+    <section>
+        <div class="row banner">
+            <div class="col">
+                <div class="container">
                     <div class="row">
-                        <div class="col-12">
-                            <div class="card card00 m-2 border-0">
-                                <div class="row text-center justify-content-center px-3">
-                                    <p class="prev text-danger"></p
-                                        id="back">
-                                   
-                                </div>
-                                <div class="d-flex flex-md-row px-3 mt-4 flex-column-reverse">
-                                    <div class="col-md-6">
-                                        <div class="card1">
-                                            <ul id="progressbar" class="text-center">
-                                                <li class="active step0"></li>
-                                                <li class="step0"></li>
-                                                <li class="step0"></li>
-                                                <li class="step0"></li>
-                                            </ul>
-                                          
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="card2 first-screen show ml-2">
-                                            
-                                            <div class="row px-3 mt-4">
-                                                <div class="form-group mt-1 mb-1"> <input type="text" id="email"
-                                                        class="form-control" required> <label
-                                                        class="ml-3 form-control-placeholder" for="email">Email</label>
-                                                </div>
-                                                <div class="next-button text-center mt-1 ml-2"> <span
-                                                        class="fa fa-arrow-right"></span> </div>
-                                            </div>
-                                            <div class="row px-3 mt-1 mb-5">
-                                                <div class="custom-control custom-checkbox"> <input checked
-                                                        id="customCheck1" type="checkbox" class="custom-control-input">
-                                                    <label for="customCheck1" class="custom-control-label">I want to
-                                                        receive promo emails</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card2 ml-2">
-                                            <div class="row px-3 mt-3">
-                                                <div class="form-group mt-1 mb-1"> <input type="password" id="pwd"
-                                                        class="form-control" required> <label
-                                                        class="ml-3 form-control-placeholder" for="pwd">Password</label>
-                                                </div>
-                                                <div class="next-button text-center mt-1 ml-2"> <span
-                                                        class="fa fa-arrow-right"></span> </div>
-                                            </div>
-                                            <div class="row mt-3 mb-5">
-                                                <div class="col-12">
-                                                    <p class="mb-1">Password must contain</p>
-                                                    <div class="row">
-                                                        <div class="col-6"><span
-                                                                class="fa fa-circle text-danger"></span> lower case
-                                                        </div>
-                                                        <div class="col-6"><span
-                                                                class="fa fa-circle text-danger"></span> numbers</div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-6"><span
-                                                                class="fa fa-circle text-danger"></span> upper case
-                                                        </div>
-                                                        <div class="col-6"><span
-                                                                class="fa fa-circle text-danger"></span> 8-16 characters
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card2 ml-2">
-                                            <div class="row px-3 mt-3">
-                                                
-                                                <div class="next-button text-center mt-3 ml-2"> <span
-                                                        class="fa fa-arrow-right"></span> </div>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
+                        <div class="col-10 banner-text">
+                            <div class="banner-text-main">Appzillon<sup>TM</sup>
+                                
                             </div>
-                            
+                        </div>
+                        <div class="col-2">
+                            <div class="banneer-close">
+                                <i class="far fa-times-circle" ></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script type='text/javascript'
-        src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
-    <script type='text/javascript'>$(document).ready(function () {
+    </section>
 
-            var current_fs, next_fs, previous_fs;
 
-            // No BACK button on first screen
-            if ($(".show").hasClass("first-screen")) {
-                $(".prev").css({ 'display': 'none' });
-            }
 
-            // Next button
-            $(".next-button").click(function () {
+    <section>
+        <div class="row my-5">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div>
+                                <ul role="tablist" class="nav nav-tabs  ">  <p class="steps hide">Steps</p>
+                                    <li role="presentation" class="nav-item  navitem"><a role="tab" data-toggle="tab" class="nav-link " href="#tab-1">1</a></li> <div class="vl1 "></div>
+                                    <li role="presentation" class="nav-item navitem"><a role="tab" data-toggle="tab" class="nav-link" href="#tab-2">2</a></li> <div class="vl1 "></div>
+                                    <li role="presentation" class="nav-item navitem"><a role="tab" data-toggle="tab" class="nav-link active" href="#tab-3">3</a></li> <div class="vl "></div>
+                                    <li role="presentation" class="nav-item4 navitem"><a role="tab" data-toggle="tab" class="nav-link" href="#tab-4">4</a></li> <div class="vl "></div>
+                                    <li role="presentation" class="nav-item4 navitem"><a role="tab" data-toggle="tab" class="nav-link" href="#tab-5">5</a></li> 
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane " id="tab-1">
+                                        <p>Content for tab 1.</p>
+                                        
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="tab-2">
+                                        <p>Content for tab 2.</p>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane active" id="tab-3">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-md-4"></div>
+                                                        <div class="col-md-8">
+                                                            <div class="row">
+                                                                <div class="col help-text mb-4">
+                                                                    Help us know you better
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="card mx-md-3">
+                                                                <div class="card-body pb-4"> 
+                                                                    <div class="card-head py-3"> 
+                                                                        <div class="person-icon">
+                                                                    <img src="./src/img/person.svg" alt="person image" class="icon-01">
+                                                                </div>
+                                                                    <h4 class="card-title pt-3">Kumar Bhyrappa</h4>
+                                                                 </div>
+                                                                    <!-- <h6 class="text-muted card-subtitle mb-2"> s/o Mahesh Bhyrappa</h6> -->
+                                                                    <div class="card-text pt-4 pl-3"><p>s/o Mahesh Bhyrappa <br>
+                                                                        11 mar 1976 <br> Male</p>
+                                                                    <p class="permanent-address">Permanent Address</p>
+                                                                    <p class="address">
+                                                                        #223, 2nd floor, 3rd stage, <br>Koramangala, Banglore - 71
+                                                                    </p>
+                                                                <p>
+                                                                   <div class="row">
+                                                                       <div class="col-1 my-auto"> <div class="round">
+                                                                        <input type="checkbox" id="checkbox" checked />
+                                                                        <label for="checkbox"></label> 
+                                                                      </div></div>
+                                                                       <div class="col-10"><div class="c-address">Communication address <br> same as permanent address</div></div>
 
-                current_fs = $(this).parent().parent();
-                next_fs = $(this).parent().parent().next();
+                                                                   </div>
+                                                                       
+                                                                      
+                                                                </p>
+                                                                
+                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                            <div class="row">
+                                                                <div class="col mx-md-3">
+                                                                    <!-- <div class="container"> -->
+                                                                        <div class="row">
+                                                                            <div class="col">
+                                                                                <form action="">
+                                                                                    <div class="row pt-4">
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-group">
+                                                                                                <div class="col">
+                                                                                                    <label for="salutation">Salutation</label>
+                                                                                                    <select class="form-control salutation round" id="sel1">
+                                                                                                        <option>Mr.</option>
+                                                                                                        <option>Mrs.</option>
+                                                                                                        
+                                                                                                      </select>
+                                                                                                </div>
+                                                                                            
+                                                                                        </div>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-group">
+                                                                                                <div class="col">
+                                                                                                    <label for="maidenName">Mother's maiden Name</label>
+                                                                                                   
+                                                                                                    <input class="form-control mname" id="maidenName" type="text">
+                                                                                                       
+                                                                                                        
+                                                                                                      </input>
+                                                                                                      <a href="#" data-toggle="tooltip" data-placement="top" title="Some information"><i class="fas fa-info-circle"></i></a>
+                                                                                                      
+                                                                                                </div>
+                                                                                            
+                                                                                        </div>
+                                                                                        </div>
+                    
+                                                                                    </div>
+                    
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-group">
+                                                                                                <div class="col">
+                                                                                                    <label for="motherName">Mother's Name</label>
+                                                                                                    <input class="form-control " id="motherName" type="text">
+                                                                                                       
+                                                                                                        
+                                                                                                      </input>
+                                                                                                </div>
+                                                                                            
+                                                                                        </div>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-group">
+                                                                                                <div class="col">
+                                                                                                    <label for="MartialStatus">Martial Status</label>
+                                                                                                    <select class="form-control round" id="MartialStatus">
+                                                                                                        <option>Please select</option>
+                                                                                                        <option>Single</option>
+                                                                                                        <option>Married</option>
+                                                                                                        
+                                                                                                      </select>
+                                                                                                </div>
+                                                                                            
+                                                                                        </div>
+                                                                                        </div>
+                    
+                                                                                    </div>
+                    
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-group">
+                                                                                                <div class="col">
+                                                                                                    <label for="RStatus">Residential Status</label>
+                                                                                                    <select class="form-control round " id="RStatus">
+                                                                                                        <option>Please select</option>
+                                                                                                        <option>opt-1</option>
+                                                                                                        <option>opt-2</option>
+                                                                                                        
+                                                                                                      </select>
+                                                                                                </div>
+                                                                                            
+                                                                                        </div>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-group">
+                                                                                                <div class="col">
+                                                                                                    <label for="occupationType">Occupation Type</label>
+                                                                                                    <select class="form-control round" id="occupationType">
+                                                                                                        <option>Please select</option>
+                                                                                                        <option>opt-1</option>
+                                                                                                        <option>opt-2</option>
+                                                                                                        
+                                                                                                      </select>
+                                                                                                </div>
+                                                                                            
+                                                                                        </div>
+                                                                                        </div>
+                    
+                                                                                    </div>
+                    
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-group">
+                                                                                                <div class="col">
+                                                                                                    <label for="occupation">Occupation </label>
+                                                                                                    <select class="form-control round" id="occupation">
+                                                                                                        <option>Please select</option>
+                                                                                                        <option>opt-1</option>
+                                                                                                        <option>opt-2</option>
+                                                                                                        
+                                                                                                      </select>
+                                                                                                </div>
+                                                                                            
+                                                                                        </div>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-group">
+                                                                                                <div class="col">
+                                                                                                    <label for="religion">Religion</label>
+                                                                                                    <select class="form-control round " id="religion">
+                                                                                                        <option>Please select</option>
+                                                                                                        <option>opt-1</option>
+                                                                                                        <option>opt-2</option>
+                                                                                                        
+                                                                                                      </select>
+                                                                                                </div>
+                                                                                            
+                                                                                        </div>
+                                                                                        </div>
+                    
+                                                                                    </div>
+                    
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-group">
+                                                                                                <div class="col">
+                                                                                                    <label for="category">Category</label>
+                                                                                                    <select class="form-control round" id="category">
+                                                                                                        <option>Please select</option>
+                                                                                                        <option>opt-1</option>
+                                                                                                        <option>opt-2</option>
+                                                                                                        
+                                                                                                      </select>
+                                                                                                </div>
+                                                                                            
+                                                                                        </div>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-group">
+                                                                                                <div class="col">
+                                                                                                    <label for="income">Gross annual Income</label>
+                                                                                                    <select class="form-control round" id="income">
+                                                                                                        <option>Please select</option>
+                                                                                                        <option>opt-1</option>
+                                                                                                        <option>opt-2</option>
+                                                                                                        
+                                                                                                      </select>
+                                                                                                </div>
+                                                                                            
+                                                                                        </div>
+                                                                                        </div>
+                    
+                                                                                    </div>
+                    
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-group">
+                                                                                                <div class="col">
+                                                                                                    <label for="qualification">Qualification</label>
+                                                                                                    <select class="form-control round" id="qualification">
+                                                                                                        <option>Please select</option>
+                                                                                                        <option>opt-1</option>
+                                                                                                        <option>opt-2</option>
+                                                                                                        
+                                                                                                      </select>
+                                                                                                </div>
+                                                                                            
+                                                                                        </div>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-group">
+                                                                                                <div class="col">
+                                                                                                    <label for="fatca">FATCA (Overseas Tax resident)</label>
 
-                $(".prev").css({ 'display': 'block' });
+                                                                                                    <div class="onoffswitch">
+                                                                                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
+                                                                                                        <label class="onoffswitch-label" for="myonoffswitch">
+                                                                                                            <span class="onoffswitch-inner"></span>
+                                                                                                            <span class="onoffswitch-switch"></span>
+                                                                                                        </label>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                </div>
+                                                                                            
+                                                                                        </div>
+                                                                                        </div>
+                    
+                                                                                    </div>
+                    
+                                                                                    <div class="row pb-5">
+                                                                                        <div class="col-md-6"></div>
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="row">
+                                                                                                <div class="col">
+                                                                                                    <div class="container">
+                                                                                                        <div class="row">
+                                                                                                            <div class="col-6">
+                                                                                                                <button class="btn cancel">Cancel</button>
+            
+                                                                                                            </div>
+                                                                                                            <div class="col-6">
+                                                                                                                <button class="btn continue">Continue</button>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            
+                                                                                        </div>
+                    
+                                                                                    </div>
+                    
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                <!-- </div> -->
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="tab-4">
+                                        <p>Content for tab 4.</p>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="tab-5">
+                                        <p>Content for tab 5.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </section>
 
-                $(current_fs).removeClass("show");
-                $(next_fs).addClass("show");
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script>
+        $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();
+        });
+        </script>
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
 
-                $("#progressbar li").eq($(".card2").index(next_fs)).addClass("active");
-
-                current_fs.animate({}, {
-                    step: function () {
-
-                        current_fs.css({
-                            'display': 'none',
-                            'position': 'relative'
-                        });
-
-                        next_fs.css({
-                            'display': 'block'
-                        });
-                    }
-                });
-            });
-
-            // Previous button
-            $(".prev").click(function () {
-
-                current_fs = $(".show");
-                previous_fs = $(".show").prev();
-
-                $(current_fs).removeClass("show");
-                $(previous_fs).addClass("show");
-
-                $(".prev").css({ 'display': 'block' });
-
-                if ($(".show").hasClass("first-screen")) {
-                    $(".prev").css({ 'display': 'none' });
-                }
-
-                $("#progressbar li").eq($(".card2").index(current_fs)).removeClass("active");
-
-                current_fs.animate({}, {
-                    step: function () {
-
-                        current_fs.css({
-                            'display': 'none',
-                            'position': 'relative'
-                        });
-
-                        previous_fs.css({
-                            'display': 'block'
-                        });
-                    }
-                });
-            });
-
-        });</script>
+    <!--  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--  -->
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    -->
 </body>
 
 </html>
